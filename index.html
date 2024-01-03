@@ -15,32 +15,67 @@
 
     <nav>
         <a onclick="showTab('login-register')">Login/Register</a>
+        <a onclick="showTab('game-list')">Games</a>
         <a onclick="showTab('about-us-content')">About Us</a>
         <a onclick="showTab('contact-form')">Contact Us</a>
-        <a onclick="showTab('game-list')">Games</a>
     </nav>
 
     <section id="login-register">
         <h1>Login/Register</h1>
         <div class="login-form">
             <h2>Login</h2>
-            <!-- Add your login form here -->
+            <form onsubmit="login(event)">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <input type="submit" value="Login">
+            </form>
         </div>
         <div class="register-form">
             <h2>Register</h2>
-            <!-- Add your registration form here -->
+            <form onsubmit="register(event)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="surname">Surname:</label>
+                <input type="text" id="surname" name="surname" required>
+
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <input type="submit" value="Register">
+            </form>
+        </div>
+    </section>
+
+    <section id="game-list">
+        <h1>Games</h1>
+        <div class="game-card">
+            <img src="game1.jpg" alt="Game 1">
+            <h2>Game 1</h2>
+            <p>Description of Game 1.</p>
+        </div>
+
+        <div class="game-card">
+            <img src="game2.jpg" alt="Game 2">
+            <h2>Game 2</h2>
+            <p>Description of Game 2.</p>
         </div>
     </section>
 
     <section id="about-us-content">
         <h1>About Us</h1>
-        <!-- Add your content about us here -->
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
     </section>
 
     <section id="contact-form">
         <h1>Contact Us</h1>
-        <!-- Add your contact form here -->
         <form>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
@@ -53,24 +88,6 @@
 
             <input type="submit" value="Submit">
         </form>
-    </section>
-
-    <section id="game-list">
-        <h1>Games</h1>
-        <!-- Add space for different games here -->
-        <div class="game-card">
-            <img src="game1.jpg" alt="Game 1">
-            <h2>Game 1</h2>
-            <p>Description of Game 1.</p>
-        </div>
-
-        <div class="game-card">
-            <img src="game2.jpg" alt="Game 2">
-            <h2>Game 2</h2>
-            <p>Description of Game 2.</p>
-        </div>
-
-        <!-- Add more game cards as needed -->
     </section>
 
     <footer>

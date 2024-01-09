@@ -1,54 +1,85 @@
-body {
-    font-family: 'Arial', sans-serif;
+body, html {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: Arial;
+    background-color: white;
 }
-
-header, footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em;
-}
-
-section {
-    display: none;
-    padding: 20px;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-nav {
-    background-color: #444;
-    padding: 10px;
-    text-align: center;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-    margin: 0 5px;
+  
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
     cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 20%;
 }
-
-#login-register, #about-us-content, #contact-form, #game-list {
+  
+.tablink:hover {
+    background-color: #777;
+}
+  
+.tabcontent {
+    color: white;
     display: none;
+    padding: 100px 20px;
+    height: 100%;
 }
 
-.game-card {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin: 10px;
+#Home{
+    background-color: red;
+}
+
+#Login{
+    background-color: brown;
     text-align: center;
 }
 
-.game-card img {
-    max-width: 100%;
+#Register{
+    background-color: purple;
+    text-align: center;
+}
+
+#Contact{
+    background-color: darkblue;
+    text-align: center;
+}
+
+#About{
+    background-color: darkred;
+    text-align: justify;
+}
+
+div.games{
+    margin: 5px;
+    float: left;
+    width: 18.5%;
+}
+
+div.games img{
+    width: 100%;
     height: auto;
+}
+
+div.description{
+    text-align: left;
+    color: black;
+}
+
+#button{
+    border: 2px solid black;
+}
+
+@media (max-width: 480px) {
+    body {
+        width: 100%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    body {
+        width: 100%;
+    }
 }

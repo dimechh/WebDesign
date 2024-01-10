@@ -30,7 +30,61 @@
         elmnt.style.backgroundColor = color;
         }
 
+        function handleLogin() {
+            alert("You are logged in");
+
+            openPage('Games', document.querySelector('.tablink[data-tab="Games"]'), 'red');
+        }
+
+
         document.getElementById("defaultOpen").click();
+    </script>
+    
+    <script>
+        $(document).ready(function () {
+            $("#registerform").validate({
+                rules: {
+                    name: {
+                        required: true,
+                        lettersOnly: true
+                    },
+                    surname: {
+                        required: true,
+                        lettersOnly: true
+                    },
+                    phone: {
+                        required: true,
+                        digits: true
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    }
+                },
+                messages: {
+                    name: {
+                        required: "Please enter your name",
+                        lettersOnly: "Please enter only letters"
+                    },
+                    surname: {
+                        required: "Please enter your surname",
+                        lettersOnly: "Please enter only letters"
+                    },
+                    phone: {
+                        required: "Please enter your phone number",
+                        digits: "Please enter only digits"
+                    },
+                    email: {
+                        required: "Please enter your email address",
+                        email: "Please enter a valid email address"
+                    }
+                }
+            });
+
+            $.validator.addMethod("lettersOnly", function (value, element) {
+                return this.optional(element) || /^[a-zA-Z\s]+$/.test(value);
+            }, "Please enter only letters");
+        });
     </script>
 
     <script>
@@ -70,23 +124,25 @@
                 <label for="password">Password</label>
                 <input type="password" placeholder="Enter Password"><br><br>
     
-                <button onclick="Login()">Login</button>
+                <button onclick="handleLogin()">Login</button>
             </div>
             <div class="registerform" style="float: right; width: 50%;">
                 <h2>Register</h2>
-                <label for="name">Name <span>(required)</span></label><br>
-                <input id="name" type="text" name="name" required><br><br>
-    
-                <label for="surname">Surname <span>(required)</span></label><br>
-                <input id="surname" type="text" name="surname" required><br><br>
-    
-                <label for="phone">Phone Number <span>(required)</span></label><br>
-                <input id="phone" type="tel" name="phone" required><br><br>
-                
-                <label for="email">E-mail <span>(required)</span></label><br>
-                <input id="email" type="email" name="email" required><br><br>
-    
-                <button onclick="Register()">Register</button>
+                <form id="registerform" action="register" method="post">
+                    <label for="name">Name <span>(required)</span></label><br>
+                    <input id="name" type="text" name="name" required><br><br>
+        
+                    <label for="surname">Surname <span>(required)</span></label><br>
+                    <input id="surname" type="text" name="surname" required><br><br>
+        
+                    <label for="phone">Phone Number <span>(required)</span></label><br>
+                    <input id="phone" type="tel" name="phone" required><br><br>
+                    
+                    <label for="email">E-mail <span>(required)</span></label><br>
+                    <input id="email" type="email" name="email" required><br><br>
+        
+                    <input id="button" class="submit" type="submit" value="Register">
+                </form>
             </div>
         </div>
     </div>

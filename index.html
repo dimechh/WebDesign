@@ -37,6 +37,10 @@
         function Login(){
             alert("You are logged in");
         }
+
+        function Register(){
+            alert("You are registered");
+        }
     </script>
 
     <script>
@@ -46,13 +50,48 @@
     </script>
 </head>
 <body>
-    <button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
-    <button class="tablink" onclick="openPage('Login', this, 'brown')" id="defaultOpen">Login</button>
-    <button class="tablink" onclick="openPage('Register', this, 'purple')">Register</button>
+    <header>
+        <h1>777Games</h1>
+    </header>
+
+    <button class="tablink" onclick="openPage('LoginRegister', this, 'brown')">Login/Register</button>
+    <button class="tablink" onclick="openPage('Games', this, 'black')" id="defaultOpen">Games</button>
     <button class="tablink" onclick="openPage('Contact', this, 'darkblue')">Contact Us</button>
     <button class="tablink" onclick="openPage('About', this, 'darkred')">About Us</button>
 
-    <div id="Home" class="tabcontent">
+    <div id="LoginRegister" class="tabcontent">
+        <h1>Login/Register</h1>
+        <div class="loginform-container">
+            <div class="loginform" style="float: left; width: 50%;">
+                <h2>Login</h2>
+                <label for="username">Username</label>
+                <input type="text" placeholder="Enter Username"><br><br>
+    
+                <label for="password">Password</label>
+                <input type="password" placeholder="Enter Password"><br><br>
+    
+                <button onclick="Login()">Login</button>
+            </div>
+            <div class="registerform" style="float: right; width: 50%;">
+                <h2>Register</h2>
+                <label for="name">Name <span>(required)</span></label><br>
+                <input id="name" type="text" name="name" required><br><br>
+    
+                <label for="surname">Surname <span>(required)</span></label><br>
+                <input id="surname" type="text" name="surname" required><br><br>
+    
+                <label for="phone">Phone Number <span>(required)</span></label><br>
+                <input id="phone" type="tel" name="phone" required><br><br>
+                
+                <label for="email">E-mail <span>(required)</span></label><br>
+                <input id="email" type="email" name="email" required><br><br>
+    
+                <button onclick="Register()">Register</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="Games" class="tabcontent">
         <div class="games-container">
         <div class="games">
             <a target="_blank" href="Baccarat.jpg">
@@ -118,39 +157,6 @@
         </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         </div>
         <button onclick="Login()">Login</button>
-    </div>
-
-    <div id="Login" class="tabcontent">
-    <h1>Login</h1>
-    <p>If it is your first time on this page please make a new account in the register tab.</p>
-    <div class="loginform">
-        <label for="username">Username</label>
-        <input type="text" placeholder="Enter Username"><br><br>
-
-        <label for="passsword">Password</label>
-        <input type="password" placeholder="Enter Password"><br><br>
-
-        <button onclick="Login()">Login</button>
-    </div>
-    </div>
-
-    <div id="Register" class="tabcontent">
-    <h3>Register</h3>
-    <form id="registerform" action="register" method="post">
-        <label for="name">Name <span>(required)</span></label><br>
-        <input id="name" type="text" name="name" required><br><br>
-
-        <label for="surname">Surname <span>(required)</span></label><br>
-        <input id="surname" type="text" name="surname" required><br><br>
-
-        <label for="phone">Phone Number <span>(required)</span></label><br>
-        <input id="phone" type="tel" name="phone" required><br><br>
-        
-        <label for="email">E-mail <span>(required)</span></label><br>
-        <input id="email" type="email" name="email" required><br><br>
-
-        <input id="button" class="submit" type="submit" value="SUBMIT">
-    </form>
     </div>
 
     <div id="Contact" class="tabcontent">
